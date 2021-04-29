@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
-				<title>Find My Ice Cream</title>
+				<title>Find My Ice</title>
 				<link rel="icon" href="favicon.ico" />
 			</Head>
 			<ThemeProvider attribute="class" defaultTheme={defaultTheme}>
