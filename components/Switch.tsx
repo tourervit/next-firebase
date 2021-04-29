@@ -19,7 +19,7 @@ function Switch({ checked, onChange: changeTheme }: SwitchProps) {
 				checked={checked}
 				className={`${
 					checked ? "translate-x-0" : "translate-x-full"
-				} box-content relative transform duration-300 ease-in-out appearance-none w-4 h-4 rounded-full bg-white shadow-md outline-none focus:bg-gray-200 cursor-pointer`}
+				} box-content relative transform duration-200 appearance-none w-4 h-4 rounded-full bg-white shadow-md outline-none focus:bg-gray-200 cursor-pointer`}
 				onChange={() => changeTheme()}
 			/>
 		</label>

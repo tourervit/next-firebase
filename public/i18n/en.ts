@@ -1,8 +1,8 @@
 import { ILocale } from "./interface";
 
 const en: ILocale = {
+	home: "Home",
 	header: "Header",
-	title: "Next.js app + Tailwind + dark theme",
 };
 
 export default en;

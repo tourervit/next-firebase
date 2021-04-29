@@ -1,20 +1,17 @@
 import React from "react";
 import Head from "next/head";
-import { useLocale } from "../lib/hooks";
+import { useAuth, useLocale } from "../lib/hooks";
+import { Spinner } from "../components/Spinner";
+import { auth, googleAuthProvider } from "../lib/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { SignInButton } from "../components/SignInButton";
+import { Layout } from "../components/layout";
 
 function Home() {
+	// const { user, userName } = useAuth();
 	const { t } = useLocale();
-	return (
-		<div className="container">
-			<Head>
-				<title>Next App</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<main>
-				<h1 className="text-3xl">{t.title}</h1>
-			</main>
-		</div>
-	);
+
+	return <main>Home</main>;
 }
 
 export default Home;

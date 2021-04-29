@@ -1,8 +1,8 @@
 import { ILocale } from "./interface";
 
 const ru: ILocale = {
-	header: "Заголовок",
-	title: "Next.js приложение + Tailwind + темная тема",
+	home: "Домашняяя",
+	header: "Хеад",
 };
 
 export default ru;
