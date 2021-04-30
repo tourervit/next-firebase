@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+	input {
+		color: red !important;
+	}
+
 	@font-face {
 		font-family: Proxima Nova;
 		font-weight: 300;

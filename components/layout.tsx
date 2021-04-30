@@ -1,14 +1,15 @@
+import Link from "next/link";
 import { ReactNode } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import Link from "next/link";
-import { useAuth } from "../lib/hooks";
+import { useAuthUser } from "next-firebase-auth";
 
 interface IProps {
 	children: ReactNode;
+	email: string | undefined;
 }
 
-function Layout({ children }: IProps) {
-	const { isAuthenticated } = useAuth();
+function Layout({ children, email }: IProps) {
+	const { signOut } = useAuthUser();
 
 	return (
 		<>
@@ -23,7 +24,7 @@ function Layout({ children }: IProps) {
 					</div>
 
 					<div className="md:flex items-center hidden animate-appearing">
-						{isAuthenticated ? (
+						{email ? (
 							<>
 								<Link href="/add">
 									<a className="p-3 text-sm uppercase font-bold text-pink-950 dark:text-pink-200">
@@ -32,7 +33,7 @@ function Layout({ children }: IProps) {
 								</Link>
 								<button
 									className="p-3 text-sm uppercase font-bold text-pink-950 dark:text-pink-200"
-									onClick={() => {}}
+									onClick={signOut}
 								>
 									Logout
 								</button>

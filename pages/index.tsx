@@ -1,17 +1,24 @@
 import React from "react";
-import Head from "next/head";
-import { useAuth, useLocale } from "../lib/hooks";
-import { Spinner } from "../components/Spinner";
-import { auth, googleAuthProvider } from "../lib/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { SignInButton } from "../components/SignInButton";
-import { Layout } from "../components/layout";
+import { Layout } from "../components/Layout";
+import { AuthAction, useAuthUser, withAuthUser, withAuthUserTokenSSR } from "next-firebase-auth";
 
 function Home() {
-	// const { user, userName } = useAuth();
-	const { t } = useLocale();
+	const AuthUser = useAuthUser();
 
-	return <main>Home</main>;
+	return <Layout email={AuthUser.email}>Home page</Layout>;
 }
 
-export default Home;
+export const getServerSideProps = withAuthUserTokenSSR({
+	whenUnauthed: AuthAction.REDIRECT_TO_LOGIN,
+})(async ({ AuthUser, req }) => {
+	const token = await AuthUser.getIdToken();
+	return {
+		props: {
+			favoriteColor: "black",
+		},
+	};
+});
+
+export default withAuthUser({
+	whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN,
+})(Home);

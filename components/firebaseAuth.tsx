@@ -1,17 +1,41 @@
+import React from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase/app";
+import "firebase/auth";
 
-const uiConfig = {
+const firebaseAuthConfig = {
 	signInFlow: "popup",
+	signInOptions: [
+		{
+			provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+			requireDisplayName: false,
+		},
+	],
 	signInSuccessUrl: "/",
-	signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
+	credentialHelper: "none",
+	callbacks: {
+		// https://github.com/firebase/firebaseui-web#signinsuccesswithauthresultauthresult-redirecturl
+		signInSuccessWithAuthResult: () => false,
+	},
 };
 
-function FirebaseAuth() {
+export const FirebaseAuth = () => {
+	const [renderAuth, setRenderAuth] = React.useState(false);
+	React.useEffect(() => {
+		if (typeof window !== "undefined") {
+			setRenderAuth(true);
+		}
+	}, []);
 	return (
-		<div className="mt-10">
-			<StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+		<div>
+			{renderAuth ? (
+				<div className="mt-10">
+					<StyledFirebaseAuth
+						uiConfig={firebaseAuthConfig}
+						firebaseAuth={firebase.auth()}
+					/>
+				</div>
+			) : null}
 		</div>
 	);
-}
-export { FirebaseAuth };
+};

@@ -2,9 +2,10 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "react-hot-toast";
-import { AuthProvider } from "../lib/context";
+import { initAuth } from "../lib/firebase-auth";
 import "../styles/globals.css";
-import { Layout } from "../components/layout";
+
+initAuth();
 
 const defaultTheme = "light";
 
@@ -16,11 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<link rel="icon" href="favicon.ico" />
 			</Head>
 			<ThemeProvider attribute="class" defaultTheme={defaultTheme}>
-				<AuthProvider>
-					<Layout>
-						<Component {...pageProps} />
-					</Layout>
-				</AuthProvider>
+				<Component {...pageProps} />
 			</ThemeProvider>
 			<Toaster />
 		</>

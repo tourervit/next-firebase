@@ -1,26 +1,13 @@
-import { GetServerSideProps, NextApiRequest } from "next";
-import { useRouter } from "next/router";
-import { FirebaseAuth } from "../components/firebaseAuth";
-import { useAuth } from "../lib/hooks";
-import { getUID } from "../lib/firebaseAdmin";
+import { AuthAction, useAuthUser, withAuthUser, withAuthUserTokenSSR } from "next-firebase-auth";
+import { FirebaseAuth } from "../components/FirebaseAuth";
 
-export default function Auth({ kek }) {
-	const { isAuthenticated } = useAuth();
-	const router = useRouter();
-
+const Auth = () => {
+	const AuthUser = useAuthUser();
 	return <FirebaseAuth />;
-}
-
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-	const uid = await getUID(req as NextApiRequest);
-
-	if (uid) {
-		res.writeHead(302, {
-			Location: "/",
-		});
-		res.end();
-	}
-	return {
-		props: {},
-	};
 };
+
+export const getServerSideProps = withAuthUserTokenSSR({
+	whenAuthed: AuthAction.REDIRECT_TO_APP,
+})();
+
+export default withAuthUser({ whenAuthed: AuthAction.REDIRECT_TO_APP })(Auth);
