@@ -18,7 +18,9 @@ function Layout({ children, email }: IProps) {
 					<div>
 						<Link href="/">
 							<a className="py-3 text-sm uppercase font-bold text-pink-950 dark:text-pink-200">
-								<span className="tracking-wider">Find My Ice</span>
+								<span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-blue-600 tracking-wider">
+									Find My Ice
+								</span>
 							</a>
 						</Link>
 					</div>
