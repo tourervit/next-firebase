@@ -53,7 +53,12 @@ function Layout({ children, email }: IProps) {
 					</div>
 				</div>
 			</nav>
-			<main className="container mx-auto my-0 max-w-4xl">{children}</main>
+			<main
+				className="container mx-auto my-0
+			"
+			>
+				{children}
+			</main>
 		</>
 	);
 }
