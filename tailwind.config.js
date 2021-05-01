@@ -5,9 +5,6 @@ module.exports = {
 	darkMode: "class", // or 'media' or 'class'
 	theme: {
 		extend: {
-			animation: {
-				appearing: "appearing .4s linear",
-			},
 			colors: {
 				pink: {
 					950: "#40152f",
@@ -15,12 +12,6 @@ module.exports = {
 			},
 			fontFamily: {
 				sans: ["Proxima Nova", ...defaultTheme.fontFamily.sans],
-			},
-			keyframes: {
-				appearing: {
-					"0%": { opacity: 0 },
-					"100%": { opacity: 1 },
-				},
 			},
 			screens: {
 				xs: "475px",

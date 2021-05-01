@@ -25,7 +25,7 @@ function Layout({ children, email }: IProps) {
 						</Link>
 					</div>
 
-					<div className="md:flex items-center hidden animate-appearing">
+					<div className="md:flex items-center hidden">
 						{email ? (
 							<>
 								<Link href="/add">

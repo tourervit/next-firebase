@@ -11,7 +11,7 @@ function Switch({ checked, onChange: changeTheme }: SwitchProps) {
 			htmlFor="switch"
 			className={`${
 				checked ? "bg-indigo-800" : "bg-yellow-400"
-			} animate-appearing rounded-full w-10 h-6 flex items-center px-1 shadow-inner cursor-pointer`}
+			} rounded-full w-10 h-6 flex items-center px-1 shadow-inner cursor-pointer`}
 		>
 			<input
 				id="switch"
