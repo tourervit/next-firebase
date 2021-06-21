@@ -26,9 +26,12 @@ function Layout({ children, email }: IProps) {
 					</div>
 
 					<div className="md:flex items-center hidden">
+						<div className="transform -translate-y-px">
+							<ThemeSwitcher />
+						</div>
 						{email ? (
 							<>
-								<Link href="/add">
+								<Link href="/carts/add">
 									<a className="p-3 text-sm uppercase font-bold text-pink-950 dark:text-pink-200">
 										Add Cart
 									</a>
@@ -47,9 +50,6 @@ function Layout({ children, email }: IProps) {
 								</a>
 							</Link>
 						)}
-						<div className="transform -translate-y-px">
-							<ThemeSwitcher />
-						</div>
 					</div>
 				</div>
 			</nav>

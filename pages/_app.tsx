@@ -16,6 +16,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<title>Find My Ice</title>
 				<link rel="icon" href="favicon.ico" />
 			</Head>
+			{/* <Script>
+				<script
+					async
+					defer
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxKfNXm9F65oqNP3Lk0-q98g-lQvLaD6c&libraries=places&callback=initMap"
+				></script>
+			</Script> */}
 			<ThemeProvider attribute="class" defaultTheme={defaultTheme}>
 				<Component {...pageProps} />
 			</ThemeProvider>

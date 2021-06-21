@@ -8,8 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.11.4",
     "firebase": "^8.3.2",
     "firebase-admin": "^9.7.0",
+    "formik": "^2.2.6",
     "js-cookie": "^2.2.1",
     "next": "10.1.2",
     "next-firebase-auth": "^0.13.1-alpha.0",
@@ -19,7 +21,8 @@
     "react-firebase-hooks": "^3.0.3",
     "react-firebaseui": "^5.0.2",
     "react-hot-toast": "^1.0.2",
-    "react-map-gl": "^6.1.12"
+    "react-map-gl": "^6.1.12",
+    "use-places-autocomplete": "^1.9.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.3",

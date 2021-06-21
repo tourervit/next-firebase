@@ -20,12 +20,9 @@ function Home() {
 
 export const getServerSideProps = withAuthUserTokenSSR({
 	whenUnauthed: AuthAction.REDIRECT_TO_LOGIN,
-})(async ({ AuthUser, req }) => {
-	const token = await AuthUser.getIdToken();
+})(async () => {
 	return {
-		props: {
-			favoriteColor: "black",
-		},
+		props: {},
 	};
 });
 
