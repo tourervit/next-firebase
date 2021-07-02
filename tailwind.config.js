@@ -23,6 +23,7 @@ module.exports = {
 	variants: {
 		extend: {
 			padding: ["active"],
+			transitionProperty: ["hover"],
 		},
 	},
 	plugins: [],
