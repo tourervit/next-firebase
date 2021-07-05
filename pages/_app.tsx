@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "react-hot-toast";
 import { initAuth } from "../lib/firebase-auth";
+import Script from "next/script";
 import "../styles/globals.css";
 
 initAuth();
@@ -13,16 +14,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
-				<title>Find My Ice</title>
+				<title>ICYY</title>
 				<link rel="icon" href="favicon.ico" />
-			</Head>
-			{/* <Script>
 				<script
 					async
 					defer
-					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxKfNXm9F65oqNP3Lk0-q98g-lQvLaD6c&libraries=places&callback=initMap"
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPH5AX5EO3dJYZVB5PKzRKxCA7TCVywC0&libraries=places"
 				></script>
-			</Script> */}
+			</Head>
+
 			<ThemeProvider attribute="class" defaultTheme={defaultTheme}>
 				<Component {...pageProps} />
 			</ThemeProvider>

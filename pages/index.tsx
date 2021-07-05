@@ -10,7 +10,7 @@ function Home() {
 		<Layout email={AuthUser.email}>
 			<div className="flex">
 				<div className="w-1/2">Carts</div>
-				<div className="w-1/2" style={{ height: "calc(100vh - 60px)" }}>
+				<div className="w-1/2" style={{ height: "calc(100vh - 64px - 14px)" }}>
 					<Map />
 				</div>
 			</div>
