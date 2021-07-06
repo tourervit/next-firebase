@@ -41,9 +41,7 @@ function CartForm({}: IProps) {
 		setValue("longitude", longitude);
 	};
 
-	const handleCreate = data => {
-		console.log(data);
-	};
+	const handleCreate = data => {};
 	const onSubmit = (data: IFormData) => {
 		handleCreate(data);
 	};
@@ -76,7 +74,6 @@ function CartForm({}: IProps) {
 						onChange={(event: ChangeEvent<HTMLInputElement>) => {
 							const reader = new FileReader();
 							const file = event.target.files[0];
-							console.log(file);
 							reader.readAsDataURL(file);
 							reader.onloadend = () => {
 								setPreviewImage(reader.result);
