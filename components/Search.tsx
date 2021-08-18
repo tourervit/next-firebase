@@ -10,7 +10,7 @@ import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocom
 import { SelectFunction } from "./CartForm";
 import "@reach/combobox/styles.css";
 
-interface IPlaceSearchBoxProps {
+interface ISearchProps {
 	onSelectAddress: SelectFunction;
 	defaultValue: string;
 }
@@ -19,7 +19,7 @@ interface ISuggestion {
 	place_id: string;
 }
 
-function PlaceSearchBox({ onSelectAddress, defaultValue }: IPlaceSearchBoxProps) {
+function Search({ onSelectAddress, defaultValue }: ISearchProps) {
 	const {
 		ready,
 		value,
@@ -72,4 +72,4 @@ function PlaceSearchBox({ onSelectAddress, defaultValue }: IPlaceSearchBoxProps)
 	);
 }
 
-export { PlaceSearchBox };
+export { Search };
